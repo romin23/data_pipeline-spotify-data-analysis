@@ -8,7 +8,7 @@ The architecture of this project involves a seamless integration of AWS services
 
 ## Project Architecture
 
-![Project Architecture Diagram](path/to/project-architecture-diagram.png)
+![Project Architecture Diagram](src/arc_diag.png)
 
 ## Components
 
@@ -17,8 +17,7 @@ The architecture of this project involves a seamless integration of AWS services
 - Extracts song data from my personal Spotify playlist using the Spotify API.
 - Configured to run every 10 days.
 - Stores extracted raw data in an S3 bucket.
-
-![AWS Lambda: Data Extraction](path/to/aws-lambda-extract.png)
+![AWS Lambda: Data Extraction](src/Lambda%201.png)
 
 ### 2. AWS Lambda Function: Data Transformation
 
@@ -27,8 +26,7 @@ The architecture of this project involves a seamless integration of AWS services
   - Artists of each song.
   - Song data in my personal playlist.
   - Albums each song belongs to.
-
-![AWS Lambda: Data Transformation](path/to/aws-lambda-transform.png)
+![AWS Lambda: Data Transformation](src/Lambda%201.png)
 
 ### 3. AWS EventBridge Rule
 
@@ -40,16 +38,16 @@ The architecture of this project involves a seamless integration of AWS services
 
 - Stores raw and transformed data.
 
-![S3 Bucket Structure](path/to/s3-bucket-structure.png)
+![S3 Bucket Structure](src/S3.png)
 
 ### 5. AWS S3 Role for SnowPipe
 
 - Configured to allow Snowflake to access the data in the S3 bucket.
 
-![AWS S3 Role for SnowPipe](path/to/aws-s3-role.png)
+![AWS S3 Role for SnowPipe](src/aws%20s3%20role%20snowpipe.png)
 
 ## Snowflake Data Warehouse
-
+![Snowflake DB Structure](src/Snowflake%20Structure.png)
 ### Table Schema
 
 #### Albums Table (TB_ALBUM)
