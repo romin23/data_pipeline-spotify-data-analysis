@@ -15,7 +15,7 @@ The architecture of this project involves a seamless integration of AWS services
 ### 1. AWS Lambda Function: Data Extraction
 
 - Extracts song data from my personal Spotify playlist using the Spotify API.
-- Configured to run every 10 days.
+- Configured to run every 120 days.
 - Stores extracted raw data in an S3 bucket.
 ![AWS Lambda: Data Extraction](src/Lambda%201.png)
 
@@ -30,9 +30,9 @@ The architecture of this project involves a seamless integration of AWS services
 
 ### 3. AWS EventBridge Rule
 
-- Automatically triggers the data transformation Lambda function upon detecting changes in the S3 bucket.
+- Automatically triggers the data extraction Lambda function upon detecting changes in the S3 bucket.
 
-![AWS EventBridge Rule](path/to/aws-eventbridge-rule.png)
+![AWS EventBridge Rule](src/event_bridge_rules_updated.png)
 
 ### 4. S3 Bucket Structure
 
@@ -90,6 +90,10 @@ CREATE OR REPLACE TABLE TB_SONG_ARTIST (
     PRIMARY KEY (SONG_ID, ARTIST_ID)
 );
 ```
+
+## Dashboard 
+Mades this dashboard on snowflake using Snowsight
+![Dashboard Snapshot](src/dash.png)
 
 ## Conclusion
 
